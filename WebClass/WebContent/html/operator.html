@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		function add() {
+			var a = document.getElementById("num1").value;
+			var b = document.getElementById("num2").value;
+			document.getElementById("result").value = Number(a) + parseInt(b);
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="num1" size="5" /> +
+	<input type="text" id="num2" size="5" /> =
+	<input type="text" id="result" size="5" />
+	<input type="button" onclick="add();" value="계산">
+</body>
+
+
+</html>

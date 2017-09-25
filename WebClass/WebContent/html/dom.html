@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="div1">
+		<p id="p1">원래 있던 문단</p>
+
+	</div>
+	<script>
+		var newNode = document.createElement("p");
+		var textNode = document.createTextNode("새로운 문단");
+
+		newNode.appendChild(textNode);
+
+		var div1 = document.getElementById("div1");
+		div1.appendChild(newNode);
+
+		var p1 = document.getElementById("p1");
+		div1.removeChild(p1);
+	</script>
+</body>
+</html>

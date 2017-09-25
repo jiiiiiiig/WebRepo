@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	여기는body 영역입니다
+	<script>
+		
+		function greeting(var nation){
+			if (nation=='k'){
+				document.getElementById("result").innerHTML=
+					"안녕하세요";
+			}
+			else if(nation == 'a'){
+				document.getElementById("result").innerHTML=
+					"hello";
+			}else if(nation == 'c'){
+				document.getElementById("result").innerHTML=
+					"ni hao";
+			}
+		}
+	</script>
+
+
+	<button onclick="greeting('k')">한국</button>
+	<button onclick="greeting('a')">미국</button>
+	<button onclick="greeting('c')">중국</button>
+	<p id="result"></p>
+</html>

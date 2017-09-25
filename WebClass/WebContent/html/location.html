@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+		function printLocation() {
+			document.getElementById("result").innerHTML = location.href;
+		}
+		function goPage(url) {
+			location.href = url;
+		}
+	</script>
+	
+</head>
+<body>
+	<button onclick="goPage('http://www.google.com');">구글</button>
+	<button onclick="goPage('http://www.naver.com');">네이버</button>
+	<button onclick="goPage('http://www.daum.net');">다음</button>
+</body>
+</html>

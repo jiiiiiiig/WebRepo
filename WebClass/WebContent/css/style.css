@@ -1,0 +1,69 @@
+#main {
+	padding-top: 30px;
+}
+
+#nav {
+	background-color: #E8D1F6;
+}
+
+.main {
+	opacity: 0.5;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	margin: 0 auto;
+}
+
+html, .main {
+	height: 100%;
+}
+
+section {
+	min-height: 100%;
+}
+
+body {
+	background-image: url('../image/whiteb.jpg');
+	background-size: cover; height : 100%;
+	background-attachment: fixed;
+	height: 100%
+}
+
+.s-inner {
+	margin: 0 auto;
+	background-color: rgba(255, 255, 255, 0.5);
+	text-align: center;
+	position: relative;
+	color: black;
+	height: 700px;
+	left: 0px;
+	z-index: -999;
+}
+
+.sections {
+	padding: 200px;
+	color: white;
+}
+
+h1 {
+	font-size: 100px;
+	font-weight: 200;
+}
+
+h2 {
+	font-size: 70px;
+}
+
+h3 {
+	font-size: 50px;
+}
+
+h4 {
+	font-size: 30px;
+}
+
+h1, h2, h3, h4 {
+	font-family: koverwatch;
+	src: url(../image/koverwatch.ttf) format('truetype');
+	color: #1A1A1A;
+}
