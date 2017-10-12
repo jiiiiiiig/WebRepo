@@ -96,59 +96,6 @@
 
 	</nav>
 
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<form class="form-inline my-2 my-lg-0" id="signForm">
-
-					<div class="modal-body">
-						학년 :&nbsp;
-						<div class="btn-group" data-toggle="buttons" id="year">
-							<label class="btn btn-secondary active"> <input
-								type="radio" checked> 1학년
-							</label> <label class="btn btn-secondary"> <input type="radio">
-								2학년
-							</label> <label class="btn btn-secondary"> <input type="radio">
-								3학년
-							</label>
-						</div>
-
-
-						&nbsp;&nbsp;&nbsp;반 :&nbsp; <select class="custom-select"
-							id="clas">
-							<option value="1" selected>1반</option>
-							<option value="2">2반</option>
-							<option value="3">3반</option>
-							<option value="4">4반</option>
-							<option value="5">5반</option>
-							<option value="6">6반</option>
-						</select> <br> 번호 :&nbsp; <input class="form-control mr-sm-2"
-							type="number" placeholder="번호" aria-label="번호" id="numb" required>
-						<br> 이름 :&nbsp; <input class="form-control mr-sm-2"
-							type="text" placeholder="이름" aria-label="이름" id="name" required>
-
-					</div>
-
-
-					<div class="modal-footer">
-
-						<button type="submit" class="btn btn-primary">Sign in</button>
-
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
 
 	<div class="modal" id="myModal">
 		<div class="modal-dialog" role="document">
