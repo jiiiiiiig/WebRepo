@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="org.dimigo.vo.UserVO"%>
+	
+	
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -51,6 +54,7 @@
 					onmouseout="menu_out(this);"><a class="nav-link"
 					href="#section3">Hobby</a></li>
 			</ul>
+			<%@ include file="menu.jsp"%>
 		<%-- 세션이 없는 경우 --%>
 			<%
 				UserVO user = (UserVO) session.getAttribute("user");
@@ -146,7 +150,37 @@
 						<button type="submit" class="btn btn-primary">Sign in</button>
 
 						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Close</button>
+							xception: Unable to compile class for JSP: 
+
+An error occurred at line: 56 in the jsp file: /myblog/main.jsp
+UserVO cannot be resolved to a type
+53: 			</ul>
+54: 		<%-- 세션이 없는 경우 --%>
+55: 			<%
+56: 				UserVO user = (UserVO) session.getAttribute("user");
+57: 				if (user == null) {
+58: 			%>
+59: 			<a class="text-bold text-white" style="text-decoration: none"
+
+
+An error occurred at line: 56 in the jsp file: /myblog/main.jsp
+UserVO cannot be resolved to a type
+53: 			</ul>
+54: 		<%-- 세션이 없는 경우 --%>
+55: 			<%
+56: 				UserVO user = (UserVO) session.getAttribute("user");
+57: 				if (user == null) {
+58: 			%>
+59: 			<a class="text-bold text-white" style="text-decoration: none"
+
+
+Stacktrace:
+	org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+	org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:198)
+	org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:457)
+	org.apache.jasper.compiler.Compiler.compile(Compiler.java:363)
+	org.apache.jasper.compiler.Compiler.compile(Compiler.java:338)
+	org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)data-dismiss="modal">Close</button>
 					</div>
 				</form>
 			</div>
@@ -232,6 +266,7 @@
 		</div>
 
 	</section>
+
 
 
 	<!-- Optional JavaScript -->
