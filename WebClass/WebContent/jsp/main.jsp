@@ -54,6 +54,7 @@
 					onmouseout="menu_out(this);"><a class="nav-link"
 					href="#section3">Hobby</a></li>
 			</ul>
+			<%@ include file="menu.jsp"%>
 		<%-- 세션이 없는 경우 --%>
 			<%
 				UserVO user = (UserVO) session.getAttribute("user");
