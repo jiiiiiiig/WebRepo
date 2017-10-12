@@ -1,36 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="org.dimigo.vo.UserVO"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Home</title>
+
+<!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="/WebClass/css/footer.css">
-<style>
-div.container {
-	padding-top: 30px;
-	padding-bottom: 20px;
-}
-</style>
+<link href="../css/footer.css" rel="stylesheet">
 
 <script>
 	function menu_over(e) {
-		e.setAttribute("class", "nav-item active");
+		e.setAttribute("class", "nav-item active"); // <li class="nav-item active"
 	}
 	function menu_out(e) {
 		e.setAttribute("class", "nav-item");
 	}
 </script>
+<style>
+div.container {
+	padding-top: 30px;
+}
+</style>
+
 </head>
 <body>
-
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="#">Home</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -41,46 +42,20 @@ div.container {
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
 			<%@ include file="menu.jsp"%>
 
-			<%-- 세션이 없는 경우 --%>
-			<%
-				UserVO user = (UserVO) session.getAttribute("user");
-				if (user == null) {
-			%>
-			<a class="text-bold text-white" style="text-decoration: none"
-				href="/WebClass/login">Sign in</a> <span
-				class="text-bold text-white">&nbsp; or &nbsp;</span> <a
-				class="text-bold text-white" style="text-decoration: none" href="/WebClass/signup">Sign
-				up</a>
-			<%
-				} else {
-			%>
-
-			<%-- 세션이 있는 경우 --%>
-			<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-				<li class="nav-item dropdown"><a
-					class="nav-item nav-link dropdown-toggle mr-md-2" href="#"
-					id="bd-versions" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <%=user.getName()%>님
-				</a>
-					<div class="dropdown-menu dropdown-menu-right"
-						aria-labelledby="bd-versions">
-						<form action="/WebClass/logout" method="post">
-							<button type="submit" class="dropdown-item">Sign out</button>
-						</form>
-						<div class="dropdown-divider"></div>
-						<button type="button" class="dropdown-item">Action1</button>
-						<button type="button" class="dropdown-item">Action2</button>
-					</div></li>
-			</ul>
-			<%
-				}
-			%>
+			<form class="form-inline my-2 my-lg-0" id="loginForm">
+				<input class="form-control mr-sm-2" type="text" placeholder="ID"
+					aria-label="ID" id="id" required> <input
+					class="form-control mr-sm-2" type="password" placeholder="PWD"
+					aria-label="PWD" id="pwd" required>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+			</form>
 		</div>
 	</nav>
 	<div class="container">
-		<h1>Hello, Bootstrap</h1>
+		<h1>Hello, Bootstrap!</h1>
 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 			Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
 			penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -103,10 +78,13 @@ div.container {
 			nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum
 			sodales, augue velit cursus nunc,</p>
 	</div>
-
+	<%@ include file="modal.jsp"%>
 	<%@ include file="footer.jsp"%>
 
-	<!-- Bootstrap js -->
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
@@ -116,6 +94,41 @@ div.container {
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
 		integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
 		crossorigin="anonymous"></script>
+
+
+	<script>
+		$(document).ready(
+				function() {
+					$('#loginForm').submit(
+							function(event) {
+								//ìë submit ë§ê¸°
+								event.preventDefault();
+
+								//id pwd ê°ì ¸ì¤ê¸°
+								var id = $('#id').val();
+								var pwd = $('#pwd').val();
+								console.log(id, pwd);
+
+								//ìë²ë¡ post ì ì¡
+								$.post("http://httpbin.org/post", {
+									"id" : id,
+									"pwd" : pwd
+								}, function(data) {
+									//alert(data.form.id + 'ë ë¡ê·¸ì¸ëììµëë¤.');
+									var myModal = $('#myModal');
+									myModal.modal();
+									myModal.find('.modal-body').text(
+											data.form.id + '님 로그인되었습니다.');
+								});
+
+							});
+				});
+
+		//ê°ë¨íê² ì°ê¸° document.ready ìì°ê³  íëë²ã.
+		$(function() {
+
+		});
+	</script>
 
 </body>
 </html>
