@@ -56,15 +56,15 @@ public class BlogLoginServlet extends HttpServlet {
 		System.out.printf("id : %s, pwd : %s", id, pwd);
 
 		// id pwd 정합성 체크
-		boolean result = true;
+		boolean result = "test@naver.com".equals(id);
 
 		if (result) {
 			// 세션에 사용자 정보 생성해 담기
 			HttpSession session = request.getSession();
 			UserVO user = new UserVO();
 			user.setId(id);
-			user.setName("홍길동");
-			user.setNickname("의적");
+			user.setName("박지교");
+			user.setNickname("지교");
 			
 			session.setAttribute("user", user);
 			
